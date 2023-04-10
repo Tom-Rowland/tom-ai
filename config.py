@@ -1,5 +1,7 @@
 import os
+from dotenv import load_dotenv
 
+load_dotenv()
 try: # This should run locally
     from credentials import credentials_dict
     OPENAI_TOKEN = credentials_dict['openai_token']
