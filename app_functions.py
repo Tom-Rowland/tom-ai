@@ -26,7 +26,7 @@ def create_clip(body):
         'Authorization':'Token token='+ RESEMBLEAI_TOKEN}
 
     data = {
-        'title': body,
+        'title': body[:256],
         'body': body,
         'voice_uuid': RESEMBLEAI_VOICEID,
         'is_public': False,
