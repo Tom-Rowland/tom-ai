@@ -10,6 +10,11 @@ on:
       - main
   workflow_dispatch:
 
+env:
+  OPENAI_TOKEN: ${{ secrets.OPENAI_TOKEN }}
+  RESEMBLEAI_TOKEN: ${{ secrets.RESEMBLEAI_TOKEN }}
+  RESEMBLEAI_PROJECTID: ${{ secrets.RESEMBLEAI_PROJECTID }}
+  RESEMBLEAI_VOICEID: ${{ secrets.RESEMBLEAI_VOICEID }}
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -54,13 +59,7 @@ jobs:
           name: python-app
           path: .
           exclude: venv/
-      
-      - name: Create environment file
-        env:
-          OPENAI_TOKEN: ${{ secrets.OPENAI_TOKEN }}
-          RESEMBLEAI_TOKEN: ${{ secrets.RESEMBLEAI_TOKEN }}
-          RESEMBLEAI_PROJECTID: ${{ secrets.RESEMBLEAI_PROJECTID }}
-          RESEMBLEAI_VOICEID: ${{ secrets.RESEMBLEAI_VOICEID }}
+        
           
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
