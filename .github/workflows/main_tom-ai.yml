@@ -61,3 +61,8 @@ jobs:
           app-name: 'tom-ai'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_6735406C95AF4C2497DD9AF0FF5B95A8 }}
+          env: |
+            OPENAI_TOKEN=${{ secrets.OPENAI_TOKEN }}
+            RESEMBLEAI_TOKEN=${{ secrets.RESEMBLEAI_TOKEN }}
+            RESEMBLEAI_PROJECTID=${{ secrets.RESEMBLEAI_PROJECTID }}
+            RESEMBLEAI_VOICEID=${{ secrets.RESEMBLEAI_VOICEID }}
