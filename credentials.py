@@ -3,4 +3,4 @@ credentials_dict = {
     'resembleai':{
         'projectid':'46ebea48',
         'voiceid':'a2b46b42',
-        'token': 'OUtnKtRxRDlcYySZQNp5Zgtt'}}
+        'token': 'pQeNBrlR38ksVL7iP3SKdwtt'}}
