@@ -53,6 +53,13 @@ jobs:
         with:
           name: python-app
           path: .
+      
+      - name: Set environment variables
+        run: |
+          echo "::set-env name=OPENAI_TOKEN::${{ secrets.OPENAI_TOKEN }}"
+          echo "::set-env name=RESEMBLEAI_TOKEN::${{ secrets.RESEMBLEAI_TOKEN }}"
+          echo "::set-env name=RESEMBLEAI_PROJECTID::${{ secrets.RESEMBLEAI_PROJECTID }}"
+          echo "::set-env name=RESEMBLEAI_VOICEID::${{ secrets.RESEMBLEAI_VOICEID }}"
           
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
@@ -61,8 +68,3 @@ jobs:
           app-name: 'tom-ai'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_6735406C95AF4C2497DD9AF0FF5B95A8 }}
-          env: |
-            OPENAI_TOKEN=${{ secrets.OPENAI_TOKEN }}
-            RESEMBLEAI_TOKEN=${{ secrets.RESEMBLEAI_TOKEN }}
-            RESEMBLEAI_PROJECTID=${{ secrets.RESEMBLEAI_PROJECTID }}
-            RESEMBLEAI_VOICEID=${{ secrets.RESEMBLEAI_VOICEID }}
