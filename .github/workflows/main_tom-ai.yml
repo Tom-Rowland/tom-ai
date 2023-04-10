@@ -53,14 +53,14 @@ jobs:
         with:
           name: python-app
           path: .
+          exclude: venv/
       
       - name: Create environment file
-        run: |
-          echo "OPENAI_TOKEN=${{ secrets.OPENAI_TOKEN }}" > .env
-          echo "RESEMBLEAI_TOKEN=${{ secrets.RESEMBLEAI_TOKEN }}" >> .env
-          echo "RESEMBLEAI_PROJECTID=${{ secrets.RESEMBLEAI_PROJECTID }}" >> .env
-          echo "RESEMBLEAI_VOICEID=${{ secrets.RESEMBLEAI_VOICEID }}" >> .env
-          echo "::set-output name=env_file_path::.env"
+        env:
+          OPENAI_TOKEN: ${{ secrets.OPENAI_TOKEN }}
+          RESEMBLEAI_TOKEN: ${{ secrets.RESEMBLEAI_TOKEN }}
+          RESEMBLEAI_PROJECTID: ${{ secrets.RESEMBLEAI_PROJECTID }}
+          RESEMBLEAI_VOICEID: ${{ secrets.RESEMBLEAI_VOICEID }}
           
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
