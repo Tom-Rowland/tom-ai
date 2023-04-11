@@ -34,7 +34,6 @@ def create_clip(body):
         'callback_uri': 'https://'}
 
     response = requests.post(url, json=data, headers=headers)
-    print(response.json())
     return response.json()['item']['uuid']
 
 def get_clip(clip_id):
