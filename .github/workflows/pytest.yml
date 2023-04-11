@@ -1,0 +1,30 @@
+name: pytest
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run pytest
+        run: pytest -s --verbose
+        env:
+          OPENAI_TOKEN: ${{ secrets.OPENAI_TOKEN }}
+          RESEMBLEAI_TOKEN: ${{ secrets.RESEMBLEAI_TOKEN }}
+          RESEMBLEAI_PROJECTID: ${{ secrets.RESEMBLEAI_PROJECTID }}
+          RESEMBLEAI_VOICEID: ${{ secrets.RESEMBLEAI_VOICEID  }}
+
