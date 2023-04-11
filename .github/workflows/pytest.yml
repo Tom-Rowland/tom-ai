@@ -21,7 +21,7 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Run pytest
-        run: pytest -s
+        run: pytest -s --verbose
         env:
           OPENAI_TOKEN: ${{ secrets.OPENAI_TOKEN }}
           RESEMBLEAI_TOKEN: ${{ secrets.RESEMBLEAI_TOKEN }}
