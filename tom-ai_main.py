@@ -23,7 +23,7 @@ while True:
     
     if i == st.session_state.count:
         st.session_state.chat_history += f'\n\n[User]: {text}\n\n[Tom]: '
-    
+        del text
         # Generate response to input with ChatGPT
         response = app_functions.generate_response(st.session_state.chat_history)
         st.session_state.chat_history += str(response)
