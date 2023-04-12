@@ -1,4 +1,4 @@
-import requests
+import requests, time
 from config import OPENAI_TOKEN, RESEMBLEAI_TOKEN, RESEMBLEAI_PROJECTID,RESEMBLEAI_VOICEID
 
 def generate_response(chat_history):
@@ -47,3 +47,4 @@ def get_clip(clip_id):
         response = requests.get(url, headers=headers)
         if 'audio_src' in response.json()['item'].keys():
             return response.json()['item']['audio_src']
+        time.sleep(1)
