@@ -11,7 +11,7 @@ def generate_response(chat_history):
         'model':'text-davinci-003',
         'prompt': chat_history,
         'max_tokens': 200,
-        'temperature': 0,
+        'temperature': 0.5,
         'top_p':1,
         'n':1}
     response = requests.post(url, json=data, headers=headers)
