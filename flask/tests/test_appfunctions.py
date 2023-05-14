@@ -6,10 +6,10 @@ currentdir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentfram
 parentdir = os.path.dirname(currentdir)
 sys.path.insert(0, parentdir) 
 
-import app_functions
+import flask.app_functions as app_functions
 
 def test_generate_response():
-    from data import tom_context
+    from flask.data import tom_context
     chat_history = tom_context + f'\n\n[User]: "testing!"\n\n[Tom]:' 
     response = app_functions.generate_response(chat_history)
     print(response)

@@ -1,5 +1,5 @@
 import requests, time
-from config import OPENAI_TOKEN, RESEMBLEAI_TOKEN, RESEMBLEAI_PROJECTID,RESEMBLEAI_VOICEID
+from flask.config import OPENAI_TOKEN, RESEMBLEAI_TOKEN, RESEMBLEAI_PROJECTID,RESEMBLEAI_VOICEID
 
 def generate_response(chat_history):
     url = 'https://api.openai.com/v1/completions'

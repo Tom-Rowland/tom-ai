@@ -1,7 +1,7 @@
 import streamlit as st
-import app_functions
-from data import tom_context
-from config import OPENAI_TOKEN, RESEMBLEAI_TOKEN, RESEMBLEAI_PROJECTID,RESEMBLEAI_VOICEID
+import flask.app_functions as app_functions
+from flask.data import tom_context
+from flask.config import OPENAI_TOKEN, RESEMBLEAI_TOKEN, RESEMBLEAI_PROJECTID,RESEMBLEAI_VOICEID
 import os
 
 st.title("tom.ai")

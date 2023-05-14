@@ -1,5 +1,5 @@
-import app_functions
-from data import tom_context
+import flask.app_functions as app_functions
+from flask.data import tom_context
 
 def test_3_consecutive_inputs():
     chat_history = tom_context
