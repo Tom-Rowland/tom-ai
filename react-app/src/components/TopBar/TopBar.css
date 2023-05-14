@@ -5,11 +5,19 @@
     align-items: center;
     padding: 0 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
   }
   
   .app-name {
     font-size: 20px;
     margin-right: 20px;
+    font-family: 'Comfortaa', cursive;
+    transition: color 0.2s, font-size 0.2s;
+  }
+
+  .app-name:hover {
+    color: #007bff;
+    font-size: 21px;
   }
   
   .buttons {
@@ -20,10 +28,12 @@
     margin-right: 10px;
     color: #333;
     text-decoration: none;
-    transition: color 0.3s;
+    font-size: 20px;
+    transition: color 0.2s, font-size 0.2s;
   }
   
   .buttons a:hover {
     color: #007bff;
+    font-size: 21px;
   }
   
