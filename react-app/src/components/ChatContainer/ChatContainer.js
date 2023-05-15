@@ -7,12 +7,13 @@ const ChatContainer = () => {
   const [messages, setMessages] = useState([]);
 
   const sendMessage = (message) => {
-    // Handle the message and update the conversation
-    // You can add your logic here to interact with the backend or process the message
-
-    // For example, appending the user's message to the conversation
-    setMessages([...messages, { text: message, isUser: true }]);
+    setMessages((prevMessages) => [
+      ...prevMessages,
+      { text: message, isUser: true },
+      { text: "I am a bot", isUser: false },
+    ]);
   };
+  
 
   return (
     <div className="chat-container">
