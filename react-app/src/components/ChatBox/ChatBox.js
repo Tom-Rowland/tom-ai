@@ -1,9 +1,10 @@
 // ChatBox.js
 import React from 'react';
+import './ChatBox.css';
 
 const UserMessage = ({ message }) => {
   return (
-    <div className="user-message">
+    <div className="user-message text-right">
       {message}
     </div>
   );
