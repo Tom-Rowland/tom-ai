@@ -12,7 +12,7 @@ const UserMessage = ({ message }) => {
 
 const BotMessage = ({ message }) => {
   return (
-    <div className="bot-message">
+    <div className="bot-message text-left">
       {message}
     </div>
   );

@@ -2,3 +2,6 @@
     text-align: right;
   }
   
+.bot-message.text-left {
+    text-align: left;
+}
