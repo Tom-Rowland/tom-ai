@@ -1,3 +1,42 @@
-.text-box {
-    text-align: right;
-}
+/* TextBox.css */
+.textbox {
+    display: flex;
+    align-items: center;
+  }
+  
+  .textbox input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .textbox input:focus {
+    outline: none;
+  }
+  
+  .textbox input::placeholder {
+    color: #999;
+  }
+  
+  .textbox input::-webkit-input-placeholder {
+    color: #999;
+  }
+  
+  .textbox input::-moz-placeholder {
+    color: #999;
+  }
+  
+  .textbox input:-ms-input-placeholder {
+    color: #999;
+  }
+  
+  .textbox input::placeholder-shown {
+    text-overflow: ellipsis;
+  }
+  
+  .textbox input::placeholder-shown + * {
+    display: none;
+  }
+  

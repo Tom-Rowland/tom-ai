@@ -1,6 +1,7 @@
 // TextBox.js
+// TextBox.js
 import React, { useState } from 'react';
-import './TextBox.css'
+import './TextBox.css';
 
 const TextBox = ({ onSendMessage }) => {
   const [input, setInput] = useState('');
@@ -17,7 +18,7 @@ const TextBox = ({ onSendMessage }) => {
   };
 
   return (
-    <div className="text-box">
+    <div className="textbox">
       <input
         type="text"
         placeholder="Type your message..."
@@ -30,3 +31,4 @@ const TextBox = ({ onSendMessage }) => {
 };
 
 export default TextBox;
+
