@@ -1,5 +1,6 @@
 // TextBox.js
 import React, { useState } from 'react';
+import './TextBox.css'
 
 const TextBox = ({ onSendMessage }) => {
   const [input, setInput] = useState('');
@@ -16,13 +17,15 @@ const TextBox = ({ onSendMessage }) => {
   };
 
   return (
-    <input
-      type="text"
-      placeholder="Type your message..."
-      value={input}
-      onChange={handleInputChange}
-      onKeyPress={handleKeyPress}
-    />
+    <div className="text-box">
+      <input
+        type="text"
+        placeholder="Type your message..."
+        value={input}
+        onChange={handleInputChange}
+        onKeyPress={handleKeyPress}
+      />
+    </div>
   );
 };
 

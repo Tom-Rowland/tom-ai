@@ -4,7 +4,7 @@ import './ChatBox.css';
 
 const UserMessage = ({ message }) => {
   return (
-    <div className="user-message text-right">
+    <div className="user-message">
       {message}
     </div>
   );
@@ -12,7 +12,7 @@ const UserMessage = ({ message }) => {
 
 const BotMessage = ({ message }) => {
   return (
-    <div className="bot-message text-left">
+    <div className="bot-message">
       {message}
     </div>
   );

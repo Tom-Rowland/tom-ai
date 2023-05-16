@@ -1,7 +1,7 @@
-.user-message.text-right {
+.user-message {
     text-align: right;
   }
   
-.bot-message.text-left {
+.bot-message {
     text-align: left;
 }
