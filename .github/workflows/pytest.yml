@@ -27,4 +27,5 @@ jobs:
           RESEMBLEAI_TOKEN: ${{ secrets.RESEMBLEAI_TOKEN }}
           RESEMBLEAI_PROJECTID: ${{ secrets.RESEMBLEAI_PROJECTID }}
           RESEMBLEAI_VOICEID: ${{ secrets.RESEMBLEAI_VOICEID  }}
-
+          SQLSERVER_USERNAME: ${{ secrets.SQLSERVER_USERNAME }}
+          SQLSERVER_PASSWORD: ${{ secrets.SQLSERVER_PASSWORD }}
