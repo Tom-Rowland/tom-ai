@@ -17,13 +17,14 @@ def test_generate_response():
 
 def test_create_clip():
     text = "Hi, this is a test"
-    clip_id = app_functions.create_clip(text)
+    clip_id, body = app_functions.create_clip(text)
     print(clip_id)
     assert len(clip_id) == 8 and type(clip_id) == str
 
 def test_get_clip():
-    clip_id = app_functions.create_clip('this is a test clip')
-    clip_url = app_functions.get_clip(clip_id)
-    print(clip_url)
+    clip_id, body = app_functions.create_clip('this is a test clip')
+    clip_url, key = app_functions.get_clip(clip_id, body)
+    clip_url, key
 
     assert type(clip_url == str) and clip_url[-4:] == '.wav'
+    assert type(key == int)
