@@ -68,6 +68,8 @@ jobs:
           echo "RESEMBLEAI_TOKEN=${RESEMBLEAI_TOKEN}" >> .env
           echo "RESEMBLEAI_PROJECTID=${RESEMBLEAI_PROJECTID}" >> .env
           echo "RESEMBLEAI_VOICEID=${RESEMBLEAI_VOICEID}" >> .env
+          echo "SQLSERVER_USERNAME=${SQLSERVER_USERNAME}" >> .env
+          echo "SQLSERVER_PASSWORD=${SQLSERVER_PASSWORD}" >> .env
 
       - name: "Deploy to Azure Web App"
         uses: azure/webapps-deploy@v2
