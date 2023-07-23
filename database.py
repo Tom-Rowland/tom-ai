@@ -28,7 +28,7 @@ def write_audio_file(phrase, clip_id):
     hashed_phrase = hashlib.sha256(phrase.encode('utf-8')).hexdigest()
 
     db_command(f"""INSERT INTO [tom-ai].[dimAudioFile] VALUES ({current_audio_file_key},'{phrase.replace("'","''")}','{hashed_phrase}','{clip_id}','{timestamp}')""")
-    return max_audio_file_key
+    return current_audio_file_key
 
 def write_chat(session_key, audio_file_key,is_user,text):
     timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
