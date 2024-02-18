@@ -3,20 +3,21 @@ from config import OPENAI_TOKEN, RESEMBLEAI_TOKEN, RESEMBLEAI_PROJECTID,RESEMBLE
 import database
 
 def generate_response(chat_history):
-    url = 'https://api.openai.com/v1/completions'
+    url = 'https://api.openai.com/v1/chat/completions'
 
     headers = {
         'Content-Type':'application/json',
         'Authorization':'Bearer '+ OPENAI_TOKEN}
     data = {
-        'model':'text-davinci-003',
-        'prompt': chat_history,
+        'model':'gpt-3.5-turbo',
+        'messages': chat_history,
         'max_tokens': 30,
         'temperature': 0.5,
         'top_p':1,
         'n':1}
-    response = requests.post(url, json=data, headers=headers)
-    chat_response = response.json()['choices'][0]['text']
+    response = requests.post(url, json=data, headers=headers).json()
+    print(response['choices'][0]['message']['content'])
+    chat_response = response['choices'][0]['message']['content']
     return chat_response
 
 def create_clip(body):

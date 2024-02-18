@@ -14,7 +14,12 @@ i = 0
 
 if 'chat_history' not in st.session_state:
     st.session_state.session_key = database.write_session()
-    st.session_state.chat_history = tom_context
+    st.session_state.chat_history = [
+        {
+            "role": "system",
+            "content": tom_context
+        }
+    ]
 
 while True:
     text = st.text_input(" ", key=f"text_input_{i}")
@@ -24,11 +29,18 @@ while True:
     
     if i == st.session_state.count:
         database.write_chat(st.session_state.session_key,None,True,text)
-        st.session_state.chat_history += f'\n\n[User]: {text}\n\n[Tom]: '
+        #st.session_state.chat_history += f'\n\n[User]: {text}\n\n[Tom]: '
+        st.session_state.chat_history.append({
+            "role": "user",
+            "content": text
+        })
         del text
         # Generate response to input with ChatGPT
         response = app_functions.generate_response(st.session_state.chat_history)
-        st.session_state.chat_history += str(response)
+        st.session_state.chat_history.append({
+            "role": "assistant",
+            "content": str(response)
+        })
         
         # Check if phrase has already been synthesised in resemble.ai
         clip_id = app_functions.check_clip_already_exists(response)
