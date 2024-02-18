@@ -10,7 +10,16 @@ import app_functions
 
 def test_generate_response():
     from data import tom_context
-    chat_history = tom_context + f'\n\n[User]: "testing!"\n\n[Tom]:' 
+    chat_history = [
+        {
+            "role": "system",
+            "content": tom_context
+        },
+        {
+            "role": "user",
+            "content": "testing!"
+        }
+    ]
     response = app_functions.generate_response(chat_history)
     print(response)
     assert(type(response)==str)
